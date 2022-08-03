@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS playground</title>
+    <link rel="stylesheet" href="/style.97fcb138.css">
+<script src="/style.97fcb138.js"></script></head>
+<body>
+    <div class="wrapper">
+        <div class="logo" data-state="1">
+            <span class="M">M</span>
+            <span class="L">L</span>
+        </div>
+        <button>
+            <span data-display="true">STATE 1</span>
+            <span>STATE 2</span>
+            <span>STATE 3</span>
+        </button>
+    </div>
+
+    <script>var logo = document.querySelector('.logo');
+var button = document.querySelector('button');
+var buttonCaps = document.querySelectorAll('button span');
+var curCapI = 0;
+button.addEventListener('click', function () {
+  buttonCaps[curCapI].dataset.display = 'false';
+  curCapI++;
+  if (curCapI === 3) curCapI = 0;
+  buttonCaps[curCapI].dataset.display = 'true';
+  logo.dataset.state = curCapI + 1;
+});</script>
+</body>
+</html> 

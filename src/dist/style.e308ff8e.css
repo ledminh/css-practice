@@ -1,0 +1,18 @@
+.box {
+    width: 100px;
+    height: 100px;
+
+    margin: 100px 0 0 100px;
+
+    background-color: brown;
+
+    
+    transition: all .3s;
+}
+
+.box:hover {
+    transform: rotateZ(45deg);
+
+}
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
