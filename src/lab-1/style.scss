@@ -1,0 +1,106 @@
+.wrapper {
+    margin: 100px;
+    display: grid;
+    grid-template-rows: 100px auto;    
+    width: 100px;
+    row-gap: 30px;
+}
+
+
+.logo {
+    width: 100%;
+    position: relative;
+ 
+    transition: all .3s;
+    color: rgb(164, 85, 85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    .M {
+        font-size: 4rem;
+        
+    }
+
+    .L {
+        font-size: 4rem;
+    }
+
+    ::before {
+        content: "";
+        position: absolute;
+        width: 70%;
+        height: 70%;
+        top: 50%;
+        left: 50%;
+
+        border-radius: 50%;
+//      background-color: rgb(46, 20, 20);
+  
+        background: radial-gradient(#ffffff, #8b8b8b);
+        box-shadow: 0 0 10px rgb(196, 196, 196) inset, 0 0 10px rgb(196, 196, 196);
+        transform: translate(-50%, -50%) rotateZ(45deg);
+
+        z-index: -1;
+
+        box-shadow: 0px 0px 10px rgb(48, 20, 20);
+
+        transition: transform .3s;
+
+    }
+
+    &[data-state='3']{
+        animation: shake .1s linear 5;
+    }
+
+    &[data-state='2'] ::before {
+        transform: translate(-50%, -50%) rotateZ(90deg);
+
+    }
+
+    &[data-state='3'] ::before {
+        transform: translate(-50%, -50%) rotateZ(135deg);
+
+    }
+
+    &:hover ::before {
+        animation: logoBoxShadowEffect 1s linear infinite;
+    }
+}
+
+button {
+    height: 30px;
+
+    :not([data-display='true']){
+        display: none;
+    }
+}
+
+@keyframes logoBoxShadowEffect {
+    from,
+    to {
+        box-shadow: 0px 0px 10px rgb(48, 20, 20);
+    }
+
+    50% {
+        box-shadow: 0px 0px 15px rgb(48, 20, 20);
+    }
+}
+
+@keyframes shake {
+    from,
+    to {
+        transform: none;
+    }
+
+    33.3333333% {
+        transform: translateX(-10%);
+    }
+
+    66.666666% {
+        transform: translateX(10%);
+    }
+
+}
